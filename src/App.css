@@ -1,0 +1,382 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Menubar-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #F9F7F7;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  width: 104px;
+}
+
+.Menu-top-container {
+  height: 66vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  position: relative;
+  top: 1vh;
+}
+.Menu-button {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  height: 25%;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.Menu-button:hover {
+  outline: 1px solid gray;
+}
+
+.Active-menubutton {
+  color: darkturquoise;
+}
+
+.Cog-img {
+  width: 20px;
+  height: 20px;
+}
+
+.Menu-logout-container {
+  height: 20vh;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  top: 2vh;
+}
+
+#logout-menu-button {
+  height: 50%;
+}
+
+.Content-container {
+  display: flex;
+  flex-flow:row wrap;
+  width: 100%;
+  margin-left: 104px;
+}
+
+.About-container {
+  height: 600px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  left: 60px;
+  top: 42px;
+  font-size: 0.9em;
+}
+
+.About-input {
+  width: 460px;
+  height: 36px;
+  position: relative;
+  bottom: 22px;
+  font-size: 1.3em;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.Additional-info {
+  height: 124px;
+  width: 458px;
+  position: relative;
+  bottom: 22px;
+}
+.Visualview-container {
+  background-color: pink;
+  height: 30px;
+  display: none;
+}
+
+.Menu-informationlabels-div, .Product-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Menu-informationlabels-div {
+  height: 50px;
+  border-bottom: 1px solid lightgray;
+}
+.Product-container {
+  height: 110px;
+  border-bottom: 1px solid lightgray;
+
+}
+
+.Deleting-animation {
+  transition: height 0.5s ease-out;
+}
+
+.Menu-product-picture {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+#informationlabel-seperation-div, .Product-3row-separator {
+  display: flex;
+  flex-flow: row;
+  margin-left:65px;
+
+  width: auto;
+
+  justify-content: space-between;
+
+}
+
+#informationlabel-seperation-div > div, .Product-3row-separator>div {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  min-width: 100px;
+
+}
+
+#allproducts-container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+#informationlabel-description, .Product-description {
+  width: auto;
+
+  width:470px;
+}
+
+#informationlabel-last2row-separator, #product-last2row-separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 45%;
+  padding-left: 30px;
+}
+
+#add-product-div, .Edit-remove-container {
+  margin-right: 65px;
+  width: 69px;
+
+}
+#add-product-div>p {
+  display: inline;
+}
+
+#add-product-text {
+  cursor: pointer;
+}
+
+@media (max-width:1115px) {
+  #informationlabel-description, .Product-description {
+    width:auto;
+
+
+  }
+  #informationlabel-last2row-separator, #product-last2row-separator  {
+    width: 245px;
+    flex-shrink: 0;
+  }
+}
+
+.Edit-product-button {
+
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 0px;
+  margin-right: 7px;
+
+}
+.Edit-product-button>img {
+  height: 15px;
+  width: 15px;
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 15px;
+}
+
+.Delete-product-button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  margin-left: 7px;
+  padding: 0px;
+
+}
+.Delete-product-button>img {
+  height: 23px;
+  width: 23px;
+}
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.cover{
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:5;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 0.5s; /* Firefox < 16 */
+        -ms-animation: fadein 0.5s; /* Internet Explorer */
+}
+
+
+#productadding-popup, #productediting-popup {
+  display: flex;
+  flex-flow: column;
+  width: 500px;
+  background-color: white;
+  height: 600px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#productadding-popup > input, #productediting-popup> input {
+  width: 70%;
+  position: relative;
+  bottom:10px;
+}
+
+#productadding-popup> label, #productediting-popup> label {
+  position: relative;
+  top: 10px;
+}
+#picture-adding-container, #product-editing-picture-adding-container {
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+.Add-itemdescription-input {
+  height: 150px;
+}
+
+#product-deleting-popup {
+  background-color: white;
+  width: 50%;
+  height: 300px;
+}
+
+#product-deleting-popup >h2 {
+  margin-top: 50px;
+}
+
+#product-deleting-popup >div {
+  margin-bottom: 40px;
+}
+
+#product-deleting-popup  > button {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#Reservations-wrapper, #Menu-wrapper {
+  display: block;
+  width: 100%;
+}
+
+.Reservations-container, .Menu-container {
+  display: none;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 50px;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: 0.9em;
+
+}
+
+.Reservations-container > h2, .Menu-container>h2 {
+  position: relative;
+  left: 50px;
+}
+
+.Reservations-tabs-container, .Menu-tabs-container {
+  width: 100%;
+  height: 90px;
+  display:flex;
+  align-items: center;
+  flex-flow: row;
+  background-color: #F9F7F7;
+}
+
+.Reservations-tabs {
+ height: 100%;
+ display: flex;
+ position: relative;
+ margin-left: 40px;
+}
+
+.Product-button, .Room-button {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: gray;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.Product-button:hover, .Room-button:hover {
+  cursor: pointer;
+  outline: 1px solid gray;
+}
+
+
+.Contact-container {
+  display: none;
+  height: 500px;
+  position: relative;
+  left: 60px;
+  top: 42px;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 0.9em;
+
+}
