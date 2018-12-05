@@ -346,8 +346,9 @@
 .Reservations-tabs {
  height: 100%;
  display: flex;
- position: relative;
+ align-items: center;
  margin-left: 40px;
+ font-size: 1.2em;
 }
 
 .Product-button, .Room-button {

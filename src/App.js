@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import MenuButtons from "./Components/MenuButtons/MenuButtons";
-import ProductCategories from "./Components/ProductCategories/ProductCategories";
 import ReduxContainerRooms from "./Components/Rooms/Rooms";
 import ProductListContainer from "./Components/ProductList/ProductList";
 import AddNewRoomTab from './Components/NewRoom/NewRoom';
@@ -11,12 +10,7 @@ import ProductEditingCoverContainer from './Components/ProductEditingCover/Produ
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      productCategoryNames: "All, Drinks, Desserts, Snacks",
-    }
-  }
+
 
   onAddRoomClick() {
     let cover=document.getElementById('room-adding-cover');
@@ -24,14 +18,6 @@ class App extends Component {
   }
 
 
-
-  addCategory() {
-    let productNames= this.state.productCategoryNames;
-    productNames+=", Category";
-    this.setState({
-      productCategoryNames: productNames,
-    })
-  }
 
   addItemClick() {
     let cover=document.getElementById('productadding-cover')
@@ -70,10 +56,9 @@ class App extends Component {
             <div targetName="Menu" className="Menu-container">
               <h2>Menu items</h2>
               <div className="Menu-tabs-container">
-                <ProductCategories
-                  productCategoryNames={this.state.productCategoryNames}
-                />
-                <button onClick={this.addCategory.bind(this)}>Add category</button>
+                <div className="Reservations-tabs"> Here should be the product categories to sort products.
+                  (drinks, food, sweets...)
+                </div>
               </div>
               <div className="Menu-informationlabels-div">
                 <div id="informationlabel-seperation-div">
@@ -109,7 +94,7 @@ class App extends Component {
               <ReduxContainerRooms
               />
               <button onClick={this.onAddRoomClick}>
-                Add RoomX
+                Add Room
               </button>
             </div>
             <div className="Reservations-labels-div">
